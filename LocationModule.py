@@ -1,26 +1,16 @@
 class Locations:
 
-	location_list = [Location]	#List of location objects
-
-	def addLocation(inLoc):
-
-		#Check if location already exists
-			
-
-
-
-	def modifyLocation(inLoc):
+	#Locations Class implementation here
 
 
 
 
-	def removeLocation(inLoc):
 
 
 	class Location:
 	'Class that defines all locations used for navigating to'
 
-	def __init__(self,name,locationID,coords):
+	def __init__(self,name = "",locationID,coords = None):
 		self.name = name
 		self.locationID = locationID
 		self.coordinates = GPSObject(coords)
