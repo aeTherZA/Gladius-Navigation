@@ -1,27 +1,30 @@
 /**
  * Created by darrenadams on 2017/03/21.
+ * Usage: Class presents a Has-A relationship with Location.(Aggregation)
+ *        Instantiate GPSObject disjoint from Location.
+ *        Eg. GPSObject obj1 = new GPSObject(name)
+ *            Location obj2 = new Location(name,id,obj1)
  */
 public class GPSObject {
     private GPSCoords coordinates;
 
-    public GPSObject()
+    public GPSObject(String n)
     {
         coordinates = new GPSCoords();
+        this.getCoords(n);
     }
 
     /**
      * Get's coordinates of location.
      * @param n Name of the location
-     * @return object holding location's coordinates
+     *
      */
-    public GPSObject getCoords(String n)
+    public void getCoords(String n)
     {
         //Create GISRequest
         GISRequest req = new GISRequest(n);
         GISDataObject obj = GISDataObject::getGISDataObject(req);
         this.coordinates.set(obj);
-
-        return this;
     }
 }
 
